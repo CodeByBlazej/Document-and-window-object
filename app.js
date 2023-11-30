@@ -1,15 +1,18 @@
-const h1 = document.getElementById('main-title');
+const ul = document.body.firstElementChild.nextElementSibling;
+const firstLi = ul.firstElementChild;
 
-h1.textContent = 'Some new title!';
-h1.style.color = 'purple';
-h1.style.backgroundColor = 'red';
+console.log(firstLi);
 
-const li = document.querySelector('li:last-of-type');
-li.textContent = li.textContent + ' (Changed!)';
+const section = document.querySelector('section');
+const button = document.querySelector('button');
 
-// const listItemElements = document.querySelectorAll('li');
-const listItemElements = document.getElementsByTagName('li');
+// section.style.backgroundColor = 'blue';
+section.className = 'red-bg';
 
-for (const listItemEl of listItemElements) {
-  console.dir(listItemEl);
-}
+button.addEventListener('click', () => {
+  if (section.className === 'red-bg visible') {
+    section.className = 'red-bg invisible';
+  } else {
+    section.className = 'red-bg visible';
+  }
+});
